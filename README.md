@@ -83,7 +83,7 @@ Tests are written using:
 Clone repo:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/OperaCode/SaveEther-Test.git
 cd SaveEther
 ```
 
