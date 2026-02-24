@@ -11,7 +11,7 @@ describe("SaveEther", function () {
     const SaveEther = await ethers.getContractFactory("SaveEther");
     [owner, addr1, addr2] = await ethers.getSigners();
     saveEther = await SaveEther.deploy();
-    await saveEther.waitForDeployment(); // ✅ v6 best practice
+    await saveEther.waitForDeployment(); 
   });
 
   it("should allow a user to deposit Ether", async function () {
@@ -40,7 +40,7 @@ describe("SaveEther", function () {
     await expect(saveEther.connect(addr1).withdraw(withdrawAmount))
       .to.emit(saveEther, "WithdrawalSuccessful");
 
-    // ✅ bigint math in v6
+   
     expect(await saveEther.balances(await addr1.getAddress())).to.equal(
       depositAmount - withdrawAmount
     );
